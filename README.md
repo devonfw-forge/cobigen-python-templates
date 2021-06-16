@@ -21,14 +21,14 @@ A new trigger to the `context.xml` must be added in order to set up the CobiGen 
 
 The contents of this projects are:
 
-* templates.xml
+* `templates.xml`
 * templates
-    * requirements.txt
-    * config.py: declares the "Config" class which represents the Flask-SQLAlchemy database configuration.
+    * `requirements.txt`
+    * `config.py`: declares the "Config" class which represents the Flask-SQLAlchemy database configuration.
     * app:
-        * __init__.py.ftl: FreeMarker template declaring the application and the database.
-        * ${variables.entityName#cap_first}Model.py.ftl: FreeMarker template delcaring the table with the entity's attributes as columns
-        * ${variables.entityName#cap_first}Routes.py.ftl: FreeMarker template declaring the service returning JSON objeccts for the GET, POST, PUT and DELETE methods.
+        * `__init__.py`.ftl: FreeMarker template declaring the application and the database.
+        * `${variables.entityName#cap_first}Model.py.ftl`: FreeMarker template delcaring the table with the entity's attributes as columns
+        * `${variables.entityName#cap_first}Routes.py.ftl`: FreeMarker template declaring the service returning JSON objeccts for the GET, POST, PUT and DELETE methods.
 
 ## templates.xml
 A file for code generation purposes declaring the "CRUD Python Flask" increment that will be available for selection from the CobiGen CLI.
@@ -59,10 +59,10 @@ A FreeMarker template for the Python file declaring the application's paths. The
 
 The paths are:
 
-* "/[entityName]": 
+* `/[entityName]`: 
     * GET method: default path listing all entries to the entity table as a JSON object. Will return "List is empty" if there are no defined entries.
     * POST method: requests a JSON object defining an entry to the database. Adds and commits the entry to the database.
-* "/[entityName]/[id]":
+* `/[entityName]/[id]`:
     * GET method: returns a JSON object for the entry with the selected primary key.
     * PUT method: requests a JSON object defining one or more columns from the database. Updates and commits the entry with the selected primary key.
     * DELETE method: deletes the database entry with the selected primary key.
