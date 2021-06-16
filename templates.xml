@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<templatesConfiguration xmlns="http://capgemini.com/devonfw/cobigen/TemplatesConfiguration"
+  version="2.1">
+  
+  <templateScans>
+    <templateScan templatePath="templates" destinationPath=""/>
+  </templateScans>
+  
+  <increments>
+    <increment name="CRUD Python Flask" description="CRUD Python Flask">
+      <templateRef ref="config.py"/>
+      <templateRef ref="requirements.txt"/>
+      <templateRef ref="__init__.py"/>
+      <templateRef ref="${variables.entityName#cap_first}Routes.py"/>
+      <templateRef ref="${variables.entityName#cap_first}Model.py"/>
+    </increment>
+  </increments>
+</templatesConfiguration>
